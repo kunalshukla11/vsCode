@@ -1,6 +1,60 @@
-key bindings
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaultsauto[] 
+//Replace cmd with ctrl for windows
 [
+    // NAVIGATION for terminal
+    {
+        "key": "shift+a",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+b",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+;",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    //Disable default vs mapping
+    {
+        "key": "cmd+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },{
+        "key": "cmd+shift+;",
+        "command": "openInIntegratedTerminal",
+        "when": "workbench.view.explorer"
+    },
+    // FILE TREE
+    {
+        "key": "cmd+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+shift+n",
+        "command": "workbench.action.newWindow",
+        "when": "!explorerViewletFocus"
+    },
+    {
+        "key": "cmd+shift+d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    //Editor Commands
+    //Movelines down and disable vs default behaviour
     {
         "key": "cmd+d",
         "command": "editor.action.copyLinesDownAction",
@@ -12,40 +66,28 @@ key bindings
         "when": "editorTextFocus &&      !editorReadonly"
     },
     {
-        "key": "cmd+shift+;",
-        "command": "openInIntegratedTerminal",
-
+        "key": "cmd+d",
+        "command": "-list.focusPageDown",
+        "when": "listFocus && !inputFocus"
     },
+    {
+        "key": "cmd+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    //Add selection to next match and remove default vs code behaviour
     {
         "key": "ctrl+n",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
     },
-    {
-        "key": "ctrl+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "-list.focusPageDown",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "ctrl+;",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active"
-    },
+    //Move current or selected lines up or down 
     {
         "key": "shift+alt+k",
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
+    
     {
         "key": "shift+alt+j",
         "command": "editor.action.moveLinesDownAction",
@@ -61,20 +103,24 @@ key bindings
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
+    //Not sure about these 3 need to check what they do
     {
-        "key": "ctrl+t",
+        "key": "cmd+t",
         "command": "-extension.vim_ctrl+t",
         "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
     },
     {
-        "key": "ctrl+t",
+        "key": "cmd+t",
         "command": "-workbench.action.showAllSymbols"
     },
     {
-        "key": "ctrl+k",
+        "key": "cmd+k",
         "command": "-extension.vim_ctrl+k",
         "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
-    }
-    
-    
+    },
+    // EXTRA
+    {
+        "key": "cmd+shift+5",
+        "command": "editor.emmet.action.matchTag"
+    },
 ]
