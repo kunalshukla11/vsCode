@@ -12,12 +12,55 @@
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
     "vim.sneak": true,
-    "vim.easymotionMarkerooundColor": "#020202",
-    "vim.normalModeKeyBindings": [
+    //Leader Key
+    "vim.leader": "<space>",
+    "editor.lineNumbers": "relative",
+    "vim.normalModeKeyBindingsNonRecursive": [
+         // splits
+        { "before": ["leader", "v"], "commands": [":vsplit"] },
+        { "before": ["leader", "s"], "commands": [":split"] },
+
+        // panes
         {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
+        "before": ["leader", "h"],
+        "commands": ["workbench.action.focusLeftGroup"]
         },
+        {
+        "before": ["leader", "j"],
+        "commands": ["workbench.action.focusBelowGroup"]
+        },
+        {
+        "before": ["leader", "k"],
+        "commands": ["workbench.action.focusAboveGroup"]
+        },
+        {
+        "before": ["leader", "l"],
+        "commands": ["workbench.action.focusRightGroup"]
+        },
+        //toggle side bar visiblity 
+        {
+        "before": ["<leader>", "e"],
+        "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+        "before": ["<leader>", "f"],
+        "commands": ["revealInExplorer"]
+        },
+        //toggle highlighting
+        {
+            "before": [ "<leader>", "<space>" ],
+            "commands": [ ":nohl" ]
+        },
+          // NICE TO HAVE
+        { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
+        { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+        {
+            "before": ["g", "h"],
+            "commands": ["editor.action.showDefinitionPreviewHover"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        //Navigation Switch between buffers
         {
         "before": ["<tab>"],
         "commands": ["workbench.action.nextEditor"]
@@ -42,6 +85,7 @@
         }
     ],
     "vim.visualModeKeyBindings": [
+        //stay in visual mode while indenting
         {
         "before": [">"],
         "after": [">", "g", "v"]
@@ -50,38 +94,11 @@
         "before": ["<"],
         "after": ["<", "g", "v"]
         },
+          // toggle comment selection
+        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
     ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
-        },
-        {
-        "before": ["<leader>", "w"],
-        "commands": ["workbench.action.splitEditor"]
-        },
-        {
-        "before": ["<leader>", "e"],
-        "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-        {
-        "before": ["<leader>", "f"],
-        "commands": ["revealInExplorer"]
-        },
-        {
-        "before": ["<leader>", "h"],
-        "after": ["_"]
-        },
-        {
-        "before": ["<leader>", "l"],
-        "after": ["$"]
-        },
-        {
-            "before": [ "<leader>", "<space>" ],
-            "commands": [ ":nohl" ]
-        },
-    ],
-    "vim.leader": "<space>",
+   
+    
 
     "vim.handleKeys": {
         "<C-a>": false,
