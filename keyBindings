@@ -64,17 +64,7 @@
     },
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
   },
-  {
-    "key": "space r e",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        "workbench.action.toggleSidebarVisibility",
-        "workbench.files.action.focusFilesExplorer"
-      ]
-    },
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
-  },
+
   {
     "key": "space e",
     "command": "runCommands",
@@ -84,7 +74,7 @@
         "workbench.action.focusActiveEditorGroup"
       ]
     },
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && (!inputFocus || !codeium.chatPanelView.active)"
   },
   {
     "key": "space e",
@@ -256,5 +246,16 @@
     "key": "enter",
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
+  },
+  //Autosuggest selection
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   }
 ]
