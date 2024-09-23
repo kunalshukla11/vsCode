@@ -1,116 +1,98 @@
 {
-    "window.zoomLevel": 1,
-    "workbench.editor.enablePreview": false,
-    "breadcrumbs.enabled": false,
-    "editor.minimap.enabled": false,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.CustomBrowser": "chrome",
-    "files.autoSave": "onFocusChange",
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.sneak": true,
-    //Leader Key
-    "vim.leader": "<space>",
-    "editor.lineNumbers": "relative",
-    "vim.normalModeKeyBindingsNonRecursive": [
-         // splits
-        { "before": ["leader", "v"], "commands": [":vsplit"] },
-        { "before": ["leader", "s"], "commands": [":split"] },
+  "workbench.editor.enablePreview": false,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "files.autoSave": "onFocusChange",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  //Leader Key
+  "vim.leader": "<space>",
+  "editor.lineNumbers": "relative",
 
-        // panes
-        {
-        "before": ["leader", "h"],
-        "commands": ["workbench.action.focusLeftGroup"]
-        },
-        {
-        "before": ["leader", "j"],
-        "commands": ["workbench.action.focusBelowGroup"]
-        },
-        {
-        "before": ["leader", "k"],
-        "commands": ["workbench.action.focusAboveGroup"]
-        },
-        {
-        "before": ["leader", "l"],
-        "commands": ["workbench.action.focusRightGroup"]
-        },
-        //toggle side bar visiblity 
-        {
-        "before": ["<leader>", "e"],
-        "commands": ["workbench.action.toggleSidebarVisibility"]
-        },
-        {
-        "before": ["<leader>", "f"],
-        "commands": ["revealInExplorer"]
-        },
-        //toggle highlighting
-        {
-            "before": [ "<leader>", "<space>" ],
-            "commands": [ ":nohl" ]
-        },
-          // NICE TO HAVE
-        { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
-        { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
-        {
-            "before": ["g", "h"],
-            "commands": ["editor.action.showDefinitionPreviewHover"]
-        }
-    ],
-    "vim.normalModeKeyBindings": [
-        //Navigation Switch between buffers
-        {
-        "before": ["<tab>"],
-        "commands": ["workbench.action.nextEditor"]
-        },
-        {
-        "before": ["<S-tab>"],
-        "commands": ["workbench.action.previousEditor"]
-        }
-    ],
-    "vim.insertModeKeyBindings": [
-        {
-        "before": ["j", "k"],
-        "after": ["<Esc>"]
-        },
-        {
-        "before": ["<C-j>"],
-        "after": ["<Esc>"]
-        },
-        {
-        "before": ["<C-k>"],
-        "after": ["<Esc>"]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        //stay in visual mode while indenting
-        {
-        "before": [">"],
-        "after": [">", "g", "v"]
-        },
-        {
-        "before": ["<"],
-        "after": ["<", "g", "v"]
-        },
-          // toggle comment selection
-        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-    ],
-   
-    
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    //stay in visual mode while indenting
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
 
-    "vim.handleKeys": {
-        "<C-a>": false,
-        "<C-f>": false,
-        // VS Code new marker @ next occurence
-        "<C-c>": false,
-        // Cut
-        "<C-x>": false,
-        // Paste
-        "<C-v>": false,
-        "<C-z>": false,
-        "<C-y>": false
+  "vim.handleKeys": {
+    "<C-a>": false,
+    // "<C-f>": false,
+    // VS Code new marker @ next occurence
+    "<C-c>": false,
+    // Cut
+    "<C-x>": false,
+    // Paste
+    "<C-v>": false,
+    "<C-z>": false
+    // "<C-y>": false
+  },
+  "workbench.startupEditor": "none",
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-    }        
+  "git.autofetch": true,
+  "prettier.singleQuote": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "gitlens.mode.active": "zen",
+  "prettier.jsxSingleQuote": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "html.completion.attributeDefaultValue": "singlequotes",
+  "gitlens.views.showRelativeDateMarkers": false,
+  "gitlens.views.branches.pullRequests.showForBranches": false,
+  "gitlens.views.branches.pullRequests.enabled": false,
+  "gitlens.views.branches.showBranchComparison": false,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "classNames"
+  ],
+  "gitlens.views.branches.avatars": false,
+  "codeium.enableConfig": {
+    "*": true,
+    "properties": true
+  },
+  "workbench.sideBar.location": "right",
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "workbench.colorTheme": "One Dark Pro Flat"
 }
