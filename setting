@@ -3,59 +3,8 @@
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
   "editor.cursorSmoothCaretAnimation": "on",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.CustomBrowser": "chrome",
   "files.autoSave": "onFocusChange",
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
-  "vim.sneak": true,
-  //Leader Key
-  "vim.leader": "<space>",
   "editor.lineNumbers": "relative",
-
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-j>"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-k>"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    //stay in visual mode while indenting
-    {
-      "before": [">"],
-      "after": [">", "g", "v"]
-    },
-    {
-      "before": ["<"],
-      "after": ["<", "g", "v"]
-    },
-    // toggle comment selection
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
-  ],
-
-  "vim.handleKeys": {
-    "<C-a>": false,
-    // "<C-f>": false,
-    // VS Code new marker @ next occurence
-    "<C-c>": false,
-    // Cut
-    "<C-x>": false,
-    // Paste
-    "<C-v>": false,
-    "<C-z>": false
-    // "<C-y>": false
-  },
   "workbench.startupEditor": "none",
   "editor.formatOnSave": true,
   "[html]": {
@@ -70,31 +19,69 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
   "window.zoomLevel": 1,
-  "gitlens.mode.active": "zen",
   "prettier.jsxSingleQuote": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
   "html.completion.attributeDefaultValue": "singlequotes",
-  "gitlens.views.showRelativeDateMarkers": false,
-  "gitlens.views.branches.pullRequests.showForBranches": false,
-  "gitlens.views.branches.pullRequests.enabled": false,
-  "gitlens.views.branches.showBranchComparison": false,
   "tailwindCSS.classAttributes": [
     "class",
     "className",
     "ngClass",
     "classNames"
   ],
-  "gitlens.views.branches.avatars": false,
-  "codeium.enableConfig": {
-    "*": true,
-    "properties": true
-  },
   "workbench.sideBar.location": "right",
   "markdown.updateLinksOnFileMove.enabled": "prompt",
-  "workbench.colorTheme": "One Dark Pro Flat",
-  "editor.cursorStyle": "underline",
-  "terminal.integrated.cursorStyle": "underline"
+  "terminal.integrated.cursorStyle": "underline",
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "editor.fontSize": 13,
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  // Adding settings later for vsCode Neovim extension
+  "zenMode.showTabs": "single",
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "workbench.colorTheme": "Tokyo Night",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+
+  // "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.compositeKeys": {
+    "jk": {
+      "command": "vscode-neovim.escape"
+    }
+  },
+  "editor.linkedEditing": true,
+  "editor.unicodeHighlight.includeComments": true,
+  "workbench.editor.revealIfOpen": true,
+  "emmet.variables": {
+    "lang": "en"
+  },
+  "terminal.integrated.tabs.hideCondition": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorCustomizations": {
+    "editorBracketMatch.border": "#9da0a2",
+    "editorBracketMatch.background": "#011627"
+  },
+  "window.newWindowProfile": "Default"
+  //Tooggle the if nulllable code start showing error in vs code
+  //   "java.compile.nullAnalysis.nonnull": [],
+  //   "java.compile.nullAnalysis.nullable": []
 }
