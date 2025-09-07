@@ -1,37 +1,27 @@
-// Place your key bindings in this file to override the defaultsauto[]
+// Place your key bindings in this file to override the defaults
 [
-  // NAVIGATION for terminal
-  {
-    "key": "ctrl+cmd+p",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+cmd+o",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminal.active"
-  },
-  {
-    "key": "ctrl+cmd+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminal.active"
-  },
+  // ================================
+  // 🚀 Terminal Management
+  // ================================
   {
     "key": "cmd+;",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
-  //Disable default vs mapping
-  {
+  // Disable default VSCode mapping for `cmd+` when terminal is active
+  /*  {
     "key": "cmd+`",
     "command": "-workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
-  },
+  } */
   {
     "key": "cmd+shift+;",
     "command": "openInIntegratedTerminal"
   },
-  // Navigation
+
+  // ================================
+  // 📦 Window / Editor Navigation
+  // ================================
   {
     "key": "ctrl-h",
     "command": "workbench.action.navigateLeft"
@@ -51,10 +41,12 @@
   {
     "key": "space ,",
     "command": "workbench.action.showAllEditors",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
+
+  // Sidebar toggle + explorer focus combos
   {
-    "key": "space e",
+    "key": "space e e",
     "command": "runCommands",
     "args": {
       "commands": [
@@ -62,11 +54,10 @@
         "workbench.files.action.focusFilesExplorer"
       ]
     },
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
   },
-
   {
-    "key": "space e",
+    "key": "space e e",
     "command": "runCommands",
     "args": {
       "commands": [
@@ -77,81 +68,75 @@
     "when": "sideBarFocus && (!inputFocus || !codeium.chatPanelView.active)"
   },
   {
-    "key": "space e",
-    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+    "key": "space e e",
+    "when": "neovim.mode == 'normal' && editorTextFocus && foldersViewVisible",
     "command": "workbench.action.toggleSidebarVisibility"
   },
+
+  // Switch editor tabs
   {
     "key": "tab",
     "command": "workbench.action.nextEditorInGroup",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus ||  !inputFocus)"
   },
   {
     "key": "shift-tab",
     "command": "workbench.action.previousEditorInGroup",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
   },
 
-  // Coding
-  {
-    "key": "shift-j",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "vim.mode == 'VisualLine' && editorTextFocus"
-  },
-  {
-    "key": "shift-k",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "vim.mode == 'VisualLine' && editorTextFocus"
-  },
+  // ================================
+  // 📝 Editor Commands (Code Actions, Symbols, Rename, Hover, Search)
+  // ================================
   {
     "key": "shift-k",
     "command": "editor.action.showHover",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space c a",
     "command": "editor.action.codeAction",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space c r",
     "command": "editor.action.rename",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space c s",
     "command": "workbench.action.gotoSymbol",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space b d",
     "command": "workbench.action.closeActiveEditor",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space space",
     "command": "workbench.action.quickOpen",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space g d",
     "command": "editor.action.revealDefinition",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space g r",
     "command": "editor.action.goToReferences",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "neovim.mode == 'normal' && editorTextFocus"
   },
   {
     "key": "space s g",
     "command": "workbench.action.findInFiles",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space g g",
     "command": "runCommands",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)",
     "args": {
       "commands": ["workbench.view.scm", "workbench.scm.focus"]
     }
@@ -159,10 +144,12 @@
   {
     "key": "ctrl-n",
     "command": "editor.action.addSelectionToNextFindMatch",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)"
   },
-  //Editor Commands
-  //Movelines down and disable vs default behaviour
+
+  // ================================
+  // 🔽 Line Editing (Copy / Duplicate / Override defaults)
+  // ================================
   {
     "key": "cmd+d",
     "command": "editor.action.copyLinesDownAction",
@@ -184,7 +171,9 @@
     "when": "editorFocus"
   },
 
-  // File Explorer
+  // ================================
+  // 📂 File Explorer Commands
+  // ================================
   {
     "key": "r",
     "command": "renameFile",
@@ -220,13 +209,28 @@
     "command": "explorer.newFolder",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
+
+  // ================================
+  // 🪟 Split Editors (from editor + explorer)
+  // ================================
   {
-    "key": "s",
-    "command": "explorer.openToSide",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "key": "space shift+\\",
+    "command": "runCommands",
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)",
+    "args": {
+      "commands": ["workbench.action.splitEditorRight"]
+    }
   },
   {
-    "key": "shift-s",
+    "key": "space shift+-",
+    "command": "runCommands",
+    "when": "(neovim.mode == 'normal' || neovim.mode == 'visual') && (editorTextFocus || !inputFocus)",
+    "args": {
+      "commands": ["workbench.action.splitEditorDown"]
+    }
+  },
+  {
+    "key": "ctrl+shift+-",
     "command": "runCommands",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
     "args": {
@@ -238,6 +242,22 @@
     }
   },
   {
+    "key": "ctrl+shift+\\",
+    "command": "runCommands",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+    "args": {
+      "commands": [
+        "workbench.action.splitEditorRight",
+        "explorer.openAndPassFocus",
+        "workbench.action.closeOtherEditors"
+      ]
+    }
+  },
+
+  // ================================
+  // 📂 Explorer Open / Expand
+  // ================================
+  {
     "key": "enter",
     "command": "explorer.openAndPassFocus",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
@@ -247,15 +267,86 @@
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
-  //Autosuggest selection
+
+  // ================================
+  // 💡 Autosuggest / IntelliSense
+  // ================================
   {
-    "key": "tab",
+    "key": "ctrl+n",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "shift+tab",
+    "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  // ===== GITHUB COPILOT =====
+
+  // Accept Copilot suggestion (NOT tab)
+  {
+    "key": "cmd+enter",
+    "command": "github.copilot.acceptSuggestion",
+    "when": "editorTextFocus && inlineSuggestionVisible"
+  },
+  // Accept word
+  {
+    "key": "cmd+right",
+    "command": "github.copilot.acceptWord",
+    "when": "editorTextFocus && inlineSuggestionVisible"
+  },
+  // Accept line
+  {
+    "key": "alt+cmd+right",
+    "command": "github.copilot.acceptLine",
+    "when": "editorTextFocus && inlineSuggestionVisible"
+  },
+  // Next Copilot suggestion
+  {
+    "key": "alt+]",
+    "command": "github.copilot.nextSuggestion",
+
+    "when": "editorTextFocus && inlineSuggestionVisible"
+  },
+  // Previous Copilot suggestion
+  {
+    "key": "alt+[",
+    "command": "github.copilot.previousSuggestion",
+    "when": "editorTextFocus && inlineSuggestionVisible"
+  },
+
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalSplitPaneActive || terminalFocus && terminalProcessSupported && terminalSplitPaneActive"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "editor.action.accessibleViewAcceptInlineCompletion",
+    "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "-editor.action.accessibleViewAcceptInlineCompletion",
+    "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+  },
+  // ================================
+  // 🪟 Window Management
+  // ================================
+  {
+    "key": "ctrl-`",
+    "command": "workbench.action.quickSwitchWindow"
+  },
+  {
+    "key": "space w s",
+    "command": "runCommands",
+    "when": "neovim.mode == 'normal' && (editorTextFocus || !inputFocus)",
+    "args": {
+      "commands": ["workbench.action.switchWindow"]
+    }
   }
 ]
