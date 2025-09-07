@@ -1,18 +1,42 @@
 {
+  // -------------------- Workbench --------------------
   "workbench.editor.enablePreview": false,
-  "breadcrumbs.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
+  "workbench.editor.revealIfOpen": true,
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorCustomizations": {
+    "editorBracketMatch.border": "#9da0a2",
+    "editorBracketMatch.background": "#011627"
+  },
+
+  // -------------------- Editor --------------------
   "editor.minimap.enabled": false,
   "editor.cursorSmoothCaretAnimation": "on",
-  "files.autoSave": "onFocusChange",
   "editor.lineNumbers": "relative",
-  "workbench.startupEditor": "none",
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 13,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.linkedEditing": true,
+  "editor.unicodeHighlight.includeComments": true,
+  "editor.bracketPairColorization.enabled": true,
+
+  // -------------------- Files --------------------
+  "files.autoSave": "onFocusChange",
+
+  // -------------------- Git --------------------
+  "git.autofetch": true,
+
+  // -------------------- Prettier --------------------
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+
+  // -------------------- Language Specific --------------------
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
-  "git.autofetch": true,
-  "prettier.singleQuote": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -25,40 +49,48 @@
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
   },
-  "window.zoomLevel": 1,
-  "prettier.jsxSingleQuote": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+
+  // -------------------- Language Preferences --------------------
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
   "html.completion.attributeDefaultValue": "singlequotes",
+
+  // -------------------- Tailwind --------------------
   "tailwindCSS.classAttributes": [
     "class",
     "className",
     "ngClass",
     "classNames"
   ],
-  "workbench.sideBar.location": "right",
+
+  // -------------------- Markdown --------------------
   "markdown.updateLinksOnFileMove.enabled": "prompt",
+
+  // -------------------- Terminal --------------------
   "terminal.integrated.cursorStyle": "underline",
-  "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform"
-  },
-  "editor.fontSize": 13,
-  "github.copilot.advanced": {
-    "authProvider": "github"
-  },
+  "terminal.integrated.tabs.hideCondition": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  // "terminal.integrated.defaultProfile.osx": "tmux-shell",
+
+  // -------------------- Diff Editor --------------------
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.useInlineViewWhenSpaceIsLimited": false,
-  "github.copilot.nextEditSuggestions.enabled": true,
-  // Adding settings later for vsCode Neovim extension
+
+  // -------------------- Zen Mode --------------------
   "zenMode.showTabs": "single",
   "zenMode.centerLayout": false,
   "zenMode.hideLineNumbers": false,
-  "workbench.colorTheme": "Tokyo Night",
-  "editor.fontFamily": "JetBrains Mono",
-  "editor.fontLigatures": true,
 
-  // "terminal.integrated.defaultProfile.osx": "tmux-shell",
+  // -------------------- GitHub Copilot --------------------
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  // -------------------- VSCode Neovim --------------------
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -67,21 +99,16 @@
       "command": "vscode-neovim.escape"
     }
   },
-  "editor.linkedEditing": true,
-  "editor.unicodeHighlight.includeComments": true,
-  "workbench.editor.revealIfOpen": true,
+
+  // -------------------- Misc --------------------
+  "breadcrumbs.enabled": false,
+  "window.zoomLevel": 1,
+  "window.newWindowProfile": "Default",
   "emmet.variables": {
     "lang": "en"
-  },
-  "terminal.integrated.tabs.hideCondition": "never",
-  "terminal.integrated.enablePersistentSessions": false,
-  "editor.bracketPairColorization.enabled": true,
-  "workbench.colorCustomizations": {
-    "editorBracketMatch.border": "#9da0a2",
-    "editorBracketMatch.background": "#011627"
-  },
-  "window.newWindowProfile": "Default"
-  //Tooggle the if nulllable code start showing error in vs code
-  //   "java.compile.nullAnalysis.nonnull": [],
-  //   "java.compile.nullAnalysis.nullable": []
+  }
+
+  // Tooggle the if nulllable code start showing error in vs code
+  // "java.compile.nullAnalysis.nonnull": [],
+  // "java.compile.nullAnalysis.nullable": []
 }
